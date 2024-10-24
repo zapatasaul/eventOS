@@ -1,4 +1,4 @@
-// src/screens/HomeScreen.js
+//screens/HomeScreen.js
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { useEventViewModel } from "../viewModels/EventViewModel";

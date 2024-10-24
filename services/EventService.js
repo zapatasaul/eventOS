@@ -1,10 +1,18 @@
-// src/services/EventService.js
+// services/EventService.js
 import { firestore } from "../firebase";
+import {
+  collection,
+  getDocs,
+  doc,
+  getDoc,
+  updateDoc,
+} from "firebase/firestore";
 
 // Obtener todos los eventos
 export const getEvents = async () => {
   try {
-    const snapshot = await firestore.collection("events").get();
+    const eventsCollection = collection(firestore, "events");
+    const snapshot = await getDocs(eventsCollection);
     const events = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
     return events;
   } catch (error) {
@@ -15,14 +23,14 @@ export const getEvents = async () => {
 
 // Registrar asistencia a un evento
 export const registerForEvent = async (eventId) => {
-  const eventRef = firestore.collection("events").doc(eventId);
+  const eventRef = doc(firestore, "events", eventId);
 
   try {
-    const eventDoc = await eventRef.get();
+    const eventDoc = await getDoc(eventRef);
     const eventData = eventDoc.data();
 
     if (eventData && eventData.availableSpots > 0) {
-      await eventRef.update({
+      await updateDoc(eventRef, {
         availableSpots: eventData.availableSpots - 1,
       });
       return { success: true, message: "Registro exitoso" };

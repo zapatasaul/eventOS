@@ -1,4 +1,4 @@
-// src/viewModels/EventViewModel.js
+//viewModels/EventViewModel.js
 import { useState, useEffect } from "react";
 import { getEvents, registerForEvent } from "../services/EventService";
 

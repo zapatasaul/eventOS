@@ -1,4 +1,4 @@
-// src/screens/EventDetailsScreen.js
+//screens/EventDetailsScreen.js
 import React from "react";
 import { View, Text, Button } from "react-native";
 import { useEventViewModel } from "../viewModels/EventViewModel";
