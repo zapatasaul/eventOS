@@ -1,6 +1,7 @@
 //viewModels/EventViewModel.js
 import { useState, useEffect } from "react";
 import { getEvents, registerForEvent } from "../services/EventService";
+import { getCurrentUserId } from "../services/AuthService"; // Asegúrate de tener una función para obtener el ID del usuario actual
 
 export const useEventViewModel = () => {
   const [events, setEvents] = useState([]);
@@ -20,7 +21,8 @@ export const useEventViewModel = () => {
 
   const registerEvent = async (eventId) => {
     try {
-      const confirmation = await registerForEvent(eventId);
+      const userId = getCurrentUserId(); // Obtener el ID del usuario actual
+      const confirmation = await registerForEvent(eventId, userId); // Pasar el ID del usuario a la función de registro
       setEvents((prevEvents) =>
         prevEvents.map((event) =>
           event.id === eventId
