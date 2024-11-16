@@ -44,11 +44,6 @@ export default function HomeScreen() {
           </TouchableOpacity>
         )}
       />
-      <Button
-        title="Ver Eventos Registrados"
-        onPress={() => navigation.navigate("RegisteredEvents")}
-        color="#6200EE"
-      />
     </View>
   );
 }
