@@ -42,9 +42,18 @@ function BottomTabNavigator({ navigation }) {
 
           return <Ionicons name={iconName} size={size} color={color} />;
         },
+        tabBarStyle: {
+          backgroundColor: "#f15c07", // Fondo de la barra
+        },
+        tabBarLabelStyle: {
+          color: "#fff",
+          fontWeight: "bold",
+        },
+        tabBarActiveTintColor: "#fff",
+        tabBarInactiveTintColor: "#fff",
         headerRight: () => (
           <TouchableOpacity onPress={handleSignOut} style={{ marginRight: 15 }}>
-            <Ionicons name="log-out-outline" size={24} color="#000" />
+            <Ionicons name="log-out-outline" size={24} color="#f15c07" />
           </TouchableOpacity>
         ),
       })}

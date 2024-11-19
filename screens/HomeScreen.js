@@ -22,6 +22,9 @@ export default function HomeScreen() {
 
   return (
     <View style={styles.container}>
+      {/* Contenedor verde que cubre 3/4 de la pantalla desde abajo */}
+      <View style={styles.greenContainer} />
+
       <FlatList
         data={events}
         keyExtractor={(item) => item.id}
@@ -51,8 +54,9 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: "#f29f05",
     padding: 10,
+    position: "relative", // Para permitir la posición del contenedor verde
   },
   loadingText: {
     fontSize: 18,
@@ -67,8 +71,8 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   card: {
-    backgroundColor: "#FFFFFF",
-    borderRadius: 8,
+    backgroundColor: "#155e6f",
+    borderRadius: 15,
     padding: 15,
     marginVertical: 10,
     shadowColor: "#000",
@@ -85,17 +89,28 @@ const styles = StyleSheet.create({
   eventName: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "#333333",
+    color: "#f29f05",
     marginTop: 10,
   },
   eventDetails: {
     fontSize: 16,
-    color: "#666666",
+    color: "#fff",
     marginTop: 5,
   },
   availableSpots: {
     fontSize: 14,
-    color: "#888888",
+    color: "#f15c07",
     marginTop: 5,
+    fontWeight: "bold",
+  },
+  greenContainer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    borderTopRightRadius: 100,
+    width: "100%",
+    height: "70%",
+    backgroundColor: "#fff",
+    zIndex: 0,
   },
 });

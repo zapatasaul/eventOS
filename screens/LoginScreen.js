@@ -43,7 +43,7 @@ export default function LoginScreen() {
       {/* Contenedor del centro */}
       <View style={styles.SubContainer}>
         <View style={styles.inputWrapper}>
-          <Icon name="user" size={20} color="#f15c07" style={styles.icon} />
+          <Icon name="user" size={20} color="#fff" style={styles.icon} />
           <TextInput
             style={styles.input}
             placeholder="Correo"
@@ -51,19 +51,19 @@ export default function LoginScreen() {
             onChangeText={setEmail}
             keyboardType="email-address"
             autoCapitalize="none"
-            placeholderTextColor="#f15c07"
+            placeholderTextColor="#fff"
           />
         </View>
 
         <View style={styles.inputWrapper}>
-          <Icon name="lock" size={20} color="#f15c07" style={styles.icon} />
+          <Icon name="lock" size={20} color="#fff" style={styles.icon} />
           <TextInput
             style={styles.input}
             placeholder="Contraseña"
             value={password}
             onChangeText={setPassword}
             secureTextEntry
-            placeholderTextColor="#f15c07"
+            placeholderTextColor="#fff"
           />
         </View>
 
@@ -94,14 +94,14 @@ const styles = StyleSheet.create({
     position: "absolute",
     top: 0,
     width: "100%",
-    height: "75%",
+    height: "60%",
     backgroundColor: "#fff",
-    borderBottomLeftRadius: 20,
-    borderBottomRightRadius: 20,
+    borderBottomLeftRadius: 50,
+    borderBottomRightRadius: 50,
     zIndex: 0,
     justifyContent: "center",
     alignItems: "center",
-    paddingBottom: 200,
+    paddingBottom: 100,
   },
   logo: {
     width: 150,
@@ -118,11 +118,11 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 24,
     color: "#f15c07",
-    marginBottom: 100,
+    marginBottom: 50,
   },
   SubContainer: {
     position: "absolute",
-    top: "37.5%",
+    top: "40%",
     width: "90%",
     backgroundColor: "#155e6f",
     borderRadius: 30,
@@ -151,7 +151,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 13,
     fontSize: 16,
-    color: "#f15c07",
+    color: "#fff",
     fontWeight: "bold",
   },
   buttonContainer: {

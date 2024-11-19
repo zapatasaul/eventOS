@@ -12,6 +12,9 @@ export default function EventDetailsScreen({ route }) {
 
   return (
     <View style={styles.container}>
+      {/* Contenedor azul que cubre 3/4 de la pantalla */}
+      <View style={styles.blueContainer} />
+
       <Image source={{ uri: event.image }} style={styles.image} />
       <Text style={styles.eventName}>{event.name}</Text>
       <Text style={styles.eventDescription}>{event.description}</Text>
@@ -20,11 +23,14 @@ export default function EventDetailsScreen({ route }) {
       <Text style={styles.eventDetails}>
         Cupos disponibles: {event.availableSpots}
       </Text>
-      <Button
-        title="Asegurar asistencia"
-        onPress={() => registerEvent(eventId)}
-        color="#6200EE"
-      />
+      {/* Botón con fondo azul */}
+      <View style={styles.buttonContainer}>
+        <Button
+          title="Asegurar asistencia"
+          onPress={() => registerEvent(eventId)}
+          color="#fff" // Color del texto
+        />
+      </View>
     </View>
   );
 }
@@ -34,6 +40,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#F5F5F5",
     padding: 20,
+    position: "relative",
   },
   errorText: {
     fontSize: 18,
@@ -50,17 +57,37 @@ const styles = StyleSheet.create({
   eventName: {
     fontSize: 24,
     fontWeight: "bold",
-    color: "#333333",
+    color: "#f15c05",
     marginBottom: 10,
   },
   eventDescription: {
-    fontSize: 16,
-    color: "#666666",
-    marginBottom: 20,
+    fontSize: 19,
+    color: "#f29f05",
+    fontWeight: "bold",
+    marginBottom: 15,
   },
   eventDetails: {
     fontSize: 16,
-    color: "#666666",
+    color: "#155e6f",
     marginBottom: 10,
+  },
+  blueContainer: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    borderTopRightRadius: 100,
+    width: "100%",
+    height: "38%",
+    backgroundColor: "#f29f05",
+    zIndex: 0,
+  },
+  buttonContainer: {
+    width: "100%",
+    padding: 10,
+    backgroundColor: "#155e6f",
+    borderRadius: 30,
+    alignItems: "center",
+    marginBottom: 10,
+    justifyContent: "center",
   },
 });
